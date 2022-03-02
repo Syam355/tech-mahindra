@@ -45,6 +45,20 @@ block vars
 block body
     h1 Authorisation Example for Tech Mahindra
     h2 Regsisteration page
+    form(method="post")
+        div(class="mb-3")
+            label(for="userfirstname" class="form-label") User First Name
+            input(class="form-control" id="userfirstname")
+        div(class="mb-3")
+            label(for="userlastname" class="form-label") User Last Name
+            input(class="form-control" id="userlastname")
+        div(class="mb-3")
+            label(for="useremail" class="form-label") Email address
+            input(type="email" class="form-control" id="useremail")
+        div(class="mb-3")
+            label(for="userpassword" class="form-label") Password
+            input(type="password" class="form-control" id="userpassword")
+        button(type="submit" class="btn btn-primary") Register
         
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
