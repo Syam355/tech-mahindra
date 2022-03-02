@@ -1,8 +1,3 @@
-template.pug
-------------
-
-
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 home.pug
 ---------
 extends template
@@ -32,6 +27,14 @@ block vars
 block body
     h1 Authorisation Example for Tech Mahindra
     h2 Login page
+    form(method="post")
+        div(class="mb-3")
+            label(for="useremail" class="form-label") Email address
+            input(type="email" class="form-control" id="useremail")
+        div(class="mb-3")
+            label(for="userpassword" class="form-label") Password
+            input(type="password" class="form-control" id="userpassword")
+        button(type="submit" class="btn btn-primary") Login
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 register.pug
