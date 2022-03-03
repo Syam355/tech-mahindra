@@ -1,24 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
-// let elm = React.createElement("h1",null,"Welcome to your life");
+// let Comp = ()=> <h1>Step 2 Of React Ex</h1>;
 
-// let elm = <h1>Welcome to your life</h1>
+let ChildComp = (props)=><li>List Item { props.children }</li>;
 
+let Comp = ()=> <ul> 
+                    <ChildComp>1</ChildComp>
+                    <ChildComp>2</ChildComp> 
+                    <ChildComp>3</ChildComp> 
+                    <ChildComp>4</ChildComp> 
+                    <ChildComp>5</ChildComp> 
+                </ul>
 
-let Elm = function(){
-    let show = false;
-    if(show){
-        return <h1>Show is true</h1>
-    }else{
-        return <h1>Show is false</h1>
-    }
-} 
-
-/* class Elm extends Component{
-    render(){
-        return <h1>Welcome to your life there's no turning back</h1>
-    }
-}
- */
-ReactDOM.render(<Elm/>, document.getElementById("root"));
+ReactDOM.render(<Comp/>, document.getElementById("root"));
