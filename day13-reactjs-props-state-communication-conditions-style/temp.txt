@@ -1,35 +1,45 @@
-import React, { Component } from "react";
-
-class FirstComp extends Component{
+import { Component } from "react";
+import FirstComp from "./components/first.component";
+class MainApp extends Component{
     state = {
-        power : 1
+        power : 0,
+        message : "Message from parent"
     }
-    numRef = React.createRef();
     increasePower = ()=>{
         this.setState({
             power : this.state.power + 1
         })
     }
-    increasePowerFromRange = (evt)=>{
+    decreasePower = ()=>{
         this.setState({
-            power : Number(evt.target.value)
+            power : this.state.power - 1
         })
     }
-    increasePowerFromNumber = ()=>{
+    changeMessage = ()=>{
         this.setState({
-            power : Number( this.numRef.current.value )
+            message : "Changed"
+        })
+    }
+    setMessage = (nmessage)=>{
+        this.setState({
+            message : nmessage
         })
     }
     render(){
         return <div>
-                    <h2>Power : { this.state.power }</h2>
+                    <h1>Welcome to TechM Training</h1>
+                    <h2>Power :  | { this.state.power }</h2>
+                    <h2>Message :  | { this.state.message }</h2>
                     <button onClick={ this.increasePower }>Increase Power</button>
-                    <br/>
-                    <input min={5} max={50} step={5} onChange={ this.increasePowerFromRange } type="range" />
-                    <br/>
-                    <input ref={ this.numRef } type="number" />
-                    <button onClick={ this.increasePowerFromNumber }>Incease Power to... </button>
-                </div>
-    }
-}
-export default FirstComp;
+                    <button onClick={ this.decreasePower }>Decrease Power</button>
+                    <button onClick={ this.changeMessage }>Change Message</button>
+                    <hr />
+                    <FirstComp 
+                    setMess={ this.setMessage }
+                    incPow={ this.increasePower } 
+                    decPow={ this.decreasePower }  
+                    message={ this.state.message } 
+                    pow={ this.state.power }/>
+               </div>
+}}
+export default MainApp;
