@@ -1,0 +1,87 @@
+import { Component } from "react"
+class FirstComp extends Component{
+    state = {
+        power : 1
+    }
+    increasePower(){
+        this.setState({
+            power : this.state.power + 1
+        })
+    }
+    render(){
+        return <div>
+                    <h2>Title : { this.props.title }</h2>
+                    <h3>Message : { this.props.children }</h3>
+                    <h3>Version : { this.props.ver + 2 }</h3>
+                    <h3>Power : { this.state.power }</h3>
+                    <button onClick={ this.increasePower.bind(this) }>Increase Power</button>
+                    <button onClick={ this.increasePower.bind(this) }>Increase Power</button>
+                    <button onClick={ this.increasePower.bind(this) }>Increase Power</button>
+                    <button onClick={ this.increasePower.bind(this) }>Increase Power</button>
+                </div>
+    }
+}
+export default FirstComp;
+
+
+_____________________________________________________________________
+
+
+import { Component } from "react"
+class FirstComp extends Component{
+    state = {
+        power : 1
+    }
+    constructor(){
+        super();
+        this.increasePower = this.increasePower.bind(this);
+    }
+    increasePower(){
+        this.setState({
+            power : this.state.power + 1
+        })
+    }
+    render(){
+        return <div>
+                    <h2>Title : { this.props.title }</h2>
+                    <h3>Message : { this.props.children }</h3>
+                    <h3>Version : { this.props.ver + 2 }</h3>
+                    <h3>Power : { this.state.power }</h3>
+                    <button onClick={ this.increasePower }>Increase Power</button>
+                    <button onClick={ this.increasePower }>Increase Power</button>
+                    <button onClick={ this.increasePower }>Increase Power</button>
+                    <button onClick={ this.increasePower }>Increase Power</button>
+                </div>
+    }
+}
+export default FirstComp;
+
+
+
+----------------------------------------------------------------------------
+
+
+import { Component } from "react"
+class FirstComp extends Component{
+    state = {
+        power : 1
+    }
+    increasePower = ()=>{
+        this.setState({
+            power : this.state.power + 1
+        })
+    }
+    render(){
+        return <div>
+                    <h2>Title : { this.props.title }</h2>
+                    <h3>Message : { this.props.children }</h3>
+                    <h3>Version : { this.props.ver + 2 }</h3>
+                    <h3>Power : { this.state.power }</h3>
+                    <button onClick={ this.increasePower }>Increase Power</button>
+                    <button onClick={ this.increasePower }>Increase Power</button>
+                    <button onClick={ this.increasePower }>Increase Power</button>
+                    <button onClick={ this.increasePower }>Increase Power</button>
+                </div>
+    }
+}
+export default FirstComp;
