@@ -10,4 +10,6 @@ Tech Mahindra React Training
 # CSS 3 Assessment
 <a href="https://forms.gle/8RD5HkTDCrdPUNdY8"> Quiz Link </a>
 
-
+<hr/>
+# ES6 Assessment
+<a href="https://forms.gle/1CnNGW6AfpMG53gR8"> ES6 Quiz Link </a>
